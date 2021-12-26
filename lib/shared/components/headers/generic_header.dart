@@ -47,32 +47,35 @@ class _ActionWidgetState extends State<ActionWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(right: 15),
-      height: widget.headerHeight,
-      child: Center(
-        child: MouseRegion(
-          child: Text(
-            widget.action.title,
-            style: Theme.of(context)
-                .textTheme
-                .bodyText2!
-                .copyWith(color: currentColor),
+    return GestureDetector(
+      onTap: widget.action.action,
+      child: Container(
+        padding: EdgeInsets.only(right: 15),
+        height: widget.headerHeight,
+        child: Center(
+          child: MouseRegion(
+            child: Text(
+              widget.action.title,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText2!
+                  .copyWith(color: currentColor),
+            ),
+            onEnter: (v) {
+              print("Passou aq");
+              setState(() {
+                currentColor = Colors.green;
+                size = 25;
+              });
+            },
+            onExit: (v) {
+              print("Saiu aq");
+              setState(() {
+                currentColor = Colors.white;
+                size = 20;
+              });
+            },
           ),
-          onEnter: (v) {
-            print("Passou aq");
-            setState(() {
-              currentColor = Colors.green;
-              size = 25;
-            });
-          },
-          onExit: (v) {
-            print("Saiu aq");
-            setState(() {
-              currentColor = Colors.white;
-              size = 20;
-            });
-          },
         ),
       ),
     );

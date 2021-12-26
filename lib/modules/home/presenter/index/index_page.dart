@@ -7,7 +7,7 @@ import 'package:italo_portfolio/shared/components/headers/generic_header.dart';
 
 class IndexPage extends StatefulWidget {
   final IndexController controller;
-  IndexPage({Key? key, required this.controller}) : super(key: key);
+  const IndexPage({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<IndexPage> createState() => _IndexPageState();
@@ -24,12 +24,21 @@ class _IndexPageState extends State<IndexPage> {
           title: "Portfólio",
           actions: [
             ActionWidget(
-                headerHeight: 60, action: HeaderAction("About", () {})),
-            ActionWidget(headerHeight: 60, action: HeaderAction("About", () {}))
+                action: HeaderAction(
+                    "Inicio", () => widget.controller.changeIndex(0)),
+                headerHeight: 60),
+            ActionWidget(
+                headerHeight: 60,
+                action: HeaderAction(
+                    "About", () => widget.controller.changeIndex(1))),
+            ActionWidget(
+                headerHeight: 60, action: HeaderAction("Contato", () {}))
           ],
         ),
       ),
-      body: Body(),
+      body: Body(
+        controller: widget.controller,
+      ),
     );
   }
 }
