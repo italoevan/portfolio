@@ -32,7 +32,9 @@ class _IndexPageState extends State<IndexPage> {
                 action: HeaderAction(
                     "About", () => widget.controller.changeIndex(1))),
             ActionWidget(
-                headerHeight: 60, action: HeaderAction("Contato", () {}))
+                headerHeight: 60,
+                action: HeaderAction(
+                    "Contato", () => widget.controller.changeIndex(2)))
           ],
         ),
       ),

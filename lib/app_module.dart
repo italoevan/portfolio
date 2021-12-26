@@ -1,4 +1,3 @@
-import 'dart:js';
 
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:italo_portfolio/modules/home/home_module.dart';

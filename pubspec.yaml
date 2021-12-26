@@ -37,6 +37,7 @@ dependencies:
   flutter_modular: ^4.3.0
   get:
   google_fonts: ^2.1.0
+  responsive_builder:
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - lib/modules/home/assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
