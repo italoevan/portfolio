@@ -12,7 +12,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     Timer(const Duration(seconds: 2), () {
-      Modular.to.pushNamedAndRemoveUntil('/index', (p0) => p0.settings.name == '/index');
+      Modular.to.pushReplacementNamed('/index');
     });
 
     super.initState();
